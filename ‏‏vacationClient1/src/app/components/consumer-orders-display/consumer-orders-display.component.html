@@ -1,0 +1,37 @@
+<body>
+  <app-menu></app-menu>
+  <br>
+  <h1 style="text-align: center;">שלום {{currentConsumer.firstName}} </h1>
+  <h2>ההזמנות שלך</h2>
+  <div *ngFor="let i of arrayIndex">
+    <div class="card text-center" style="width: 55rem; margin: auto;margin-top: 4%;">
+      <div class="card-body">
+        <h5 class="card-title">דירת {{apartments[i].name}}</h5>
+        <div class="card-text">
+          <label style="display: block;">בכתובת: {{apartments[i].street}} {{apartments[i].buildingNumber}}
+            {{apartments[i].neighborhood}} {{apartments[i].city}}
+          </label>
+          <label style="display: block;">בתאריך{{orders[i].arrivalTime | date:"dd/MM/yyyy"}} עד
+            תאריך{{orders[i].departureTime | date:"dd/MM/yyyy"}}</label>
+        </div>
+        <label style="display: block;">
+          הזמן הכלול בהזמנה הוא:
+          <br>
+          ביום ההגעה-9:00 בבוקר ועד ביום העזיבה בשעה 11:00 בבוקר.
+          <br>
+          סוף שבוע יש לעזוב במוצאי שבת בשעה 21:00.
+          <br>
+          במוצאי שבת ניתן להגיע החל מהשעה 23:00.
+        </label>
+        <label style="display: block;">פרטים ליצירת קשר בענין :
+          {{homeowners[i].firstName}}
+          {{homeowners[i].lastName}}
+          {{homeowners[i].tel}}
+          {{homeowners[i].pel}}
+        </label>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+</body>

@@ -1,0 +1,53 @@
+<body>
+    <app-menu></app-menu>
+    <br>
+    <br>
+    <form [formGroup]="serchDetails" (ngSubmit)="complete()">
+        <label for="city">העיר בה אתה מחפש את הדירה</label>
+        <br>
+        <input type="text" id="city" formControlName="city">
+        <br>
+        <label for="neighborhood">השכונה בה אתה מחפש את הדירה</label>
+        <br>
+        <input type="text" id="neighborhood" formControlName="neighborhood">
+        <br>
+        <label for="minimumBeds">מינימום מיטות שאתה צריך</label>
+        <br>
+        <input type="number" id="minimumBeds" formControlName="minimumBeds">
+        <br>
+        <label for="minimumRooms">מינימום חדרים שאתה צריך</label>
+        <br>
+        <input type="number" id="minimumRooms" formControlName="minimumRooms">
+        <br>
+        <label for="yard">סמן אם אתה רוצה רק דירה עם חצר</label>
+        <br>
+        <input type="checkbox" id="yard" formControlName="yard">
+        <br>
+        <label for="jacuzzi">סמן אם אתה רוצה רק דירה עם ג'קוזי</label>
+        <br>
+        <input type="checkbox" id="jacuzzi" formControlName="jacuzzi">
+        <br>
+        <label for="pool">סמן אם אתה רוצה רק דירה עם בריכה</label>
+        <br>
+        <input type="checkbox" id="pool" formControlName="pool">
+        <br>
+        <label for="aSynagogueNearby">סמן במידה ואתה רוצה רק דירות שיש ביהכ''ס באזור</label>
+        <br>
+        <input type="checkbox" id="aSynagogueNearby" formControlName="aSynagogueNearby">
+        <br>
+        <label for="eruvAnTheNeighborhood">סמן במידה ואתה רוצה רק דירות שיש עירוב באיזור</label>
+        <br>
+        <input type="checkbox" id="eruvAnTheNeighborhood" formControlName="eruvAnTheNeighborhood">
+        <br>
+        <label for="maximumPrice">
+
+            מחיר מקסימלי
+            המחיר נבדק לפי
+            מחיר ללילה באמצע שבוע
+        </label>
+        <br>
+        <input type="number" id="maximumPrice" formControlName="maximumPrice">
+        <br>
+        <input type="submit" value="חיפוש" class="btn btn-outline-primary">
+    </form>
+</body>

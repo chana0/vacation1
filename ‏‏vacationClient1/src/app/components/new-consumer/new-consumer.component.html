@@ -1,0 +1,135 @@
+<div>
+  <div class="col-5.5"></div>
+  <form [formGroup]="consumerForm" (ngSubmit)="insert()" class="col-1">
+    <input type="text" formControlName="firstName" placeholder="שם פרטי">
+    <div *ngIf="(consumerForm.controls['firstName'].dirty || consumerForm.controls['firstName'].touched)"
+      style="width:max-content;">
+      <div *ngIf="(consumerForm.controls['firstName'].errors)&&(consumerForm.controls['firstName'].errors.required)"
+        class="alert alert-danger alert-dismissable" style="margin-right:5.5vh">
+        שדה חובה
+      </div>
+      <div *ngIf="(consumerForm.controls['firstName'].errors)&&(consumerForm.controls['firstName'].errors.pattern)"
+        class="alert alert-danger alert-dismissable" style="margin-right:4vh">
+        ערך לא חוקי
+      </div>
+    </div>
+    <input type="text" formControlName="lastName" placeholder="שם משפחה">
+    <div *ngIf="(consumerForm.controls['lastName'].dirty || consumerForm.controls['lastName'].touched)"
+      style="width:max-content;">
+      <div *ngIf="(consumerForm.controls['lastName'].errors)&&(consumerForm.controls['lastName'].errors.required)"
+        class="alert alert-danger alert-dismissable" style="margin-right:5.5vh">
+        שדה חובה
+      </div>
+      <div *ngIf="(consumerForm.controls['lastName'].errors)&&(consumerForm.controls['lastName'].errors.pattern)"
+        class="alert alert-danger alert-dismissable" style="margin-right:4vh">
+        ערך לא חוקי
+      </div>
+    </div>
+    <input type="text" formControlName="tel" placeholder="טלפון">
+    <div *ngIf="(consumerForm.controls['tel'].dirty || consumerForm.controls['tel'].touched)"
+      style="width:max-content;">
+      <div *ngIf="(consumerForm.controls['tel'].errors)&&(consumerForm.controls['tel'].errors.required)"
+        class="alert alert-danger alert-dismissable" style="margin-right:5.5vh">
+        שדה חובה
+      </div>
+      <div *ngIf="(consumerForm.controls['tel'].errors)&&(consumerForm.controls['tel'].errors.pattern)"
+        class="alert alert-danger alert-dismissable" style="margin-right: 4vh;">
+        ערך לא חוקי
+      </div>
+    </div>
+    <input type="text" formControlName="pel" placeholder="פלאפון">
+    <div *ngIf="(consumerForm.controls['pel'].dirty || consumerForm.controls['pel'].touched)"
+      style="width:max-content;">
+      <div *ngIf="(consumerForm.controls['pel'].errors)&&(consumerForm.controls['pel'].errors.required)"
+        class="alert alert-danger alert-dismissable" style="margin-right:5.5vh">
+        שדה חובה
+      </div>
+      <div *ngIf="(consumerForm.controls['pel'].errors)&&(consumerForm.controls['pel'].errors.pattern)"
+        class="alert alert-danger alert-dismissable" style="margin-right: 4vh;">
+        ערך לא חוקי
+      </div>
+    </div>
+    <input type="text" formControlName="email" placeholder="כתבת מייל" #e>
+    <div *ngIf="(consumerForm.controls['email'].dirty || consumerForm.controls['email'].touched)"
+      style="width:max-content;">
+      <div *ngIf="(consumerForm.controls['email'].errors)&&(consumerForm.controls['email'].errors.required)"
+        class="alert alert-danger alert-dismissable" style="margin-right:5.5vh">
+        שדה חובה
+      </div>
+      <div *ngIf="(consumerForm.controls['email'].errors)&&(consumerForm.controls['email'].errors.email)"
+        class="alert alert-danger alert-dismissable" style="margin-right: 4vh;">
+        ערך לא חוקי
+      </div>
+    </div>
+    <input type="text" formControlName="city" placeholder="עיר">
+    <div *ngIf="(consumerForm.controls['city'].dirty || consumerForm.controls['city'].touched)"
+      style="width:max-content;">
+      <div *ngIf="(consumerForm.controls['city'].errors)&&(consumerForm.controls['city'].errors.required)"
+        class="alert alert-danger alert-dismissable" style="margin-right:5.5vh">
+        שדה חובה
+      </div>
+      <div *ngIf="(consumerForm.controls['city'].errors)&&consumerForm.controls['city'].errors.pattern"
+        class="alert alert-danger alert-dismissable" style="margin-right: 4vh;">
+        ערך לא חוקי
+      </div>
+    </div>
+    <input type="text" formControlName="street" placeholder="רחוב">
+    <div *ngIf="(consumerForm.controls['street'].dirty || consumerForm.controls['street'].touched)"
+      style="width:max-content;">
+      <div *ngIf="(consumerForm.controls['street'].errors)&&(consumerForm.controls['street'].errors.required)"
+        class="alert alert-danger alert-dismissable" style="margin-right:5.5vh">
+        שדה חובה
+      </div>
+      <div *ngIf="(consumerForm.controls['street'].errors)&&(consumerForm.controls['street'].errors.pattern)"
+        class="alert alert-danger alert-dismissable" style="margin-right: 4vh;">
+        ערך לא חוקי
+      </div>
+    </div>
+    <input type="number" formControlName="buildingNumber" placeholder="מספר בנין">
+    <div *ngIf="(consumerForm.controls['buildingNumber'].dirty || consumerForm.controls['buildingNumber'].touched)"
+      style="width:max-content;">
+      <div
+        *ngIf="(consumerForm.controls['buildingNumber'].errors)&&(consumerForm.controls['buildingNumber'].errors.required)"
+        class="alert alert-danger alert-dismissable" style="margin-right:5.5vh">
+        שדה חובה
+      </div>
+      <div
+        *ngIf="(consumerForm.controls['buildingNumber'].errors)&&(consumerForm.controls['buildingNumber'].errors.min)"
+        class="alert alert-danger alert-dismissable" style="margin-right: 4vh;">
+        ערך לא חוקי
+      </div>
+    </div>
+    <input type="text" formControlName="zipCode" placeholder="מיקוד">
+    <div *ngIf="(consumerForm.controls['zipCode'].dirty || consumerForm.controls['zipCode'].touched)"
+      style="width:max-content;">
+      <div *ngIf="(consumerForm.controls['zipCode'].errors)&&(consumerForm.controls['zipCode'].errors.pattern)"
+        class="alert alert-danger alert-dismissable" style="margin-right:4vh;">
+        ערך לא חוקי
+      </div>
+    </div>
+    <input type="text" formControlName="identityCode" placeholder="קוד זהוי">
+    <div *ngIf="(consumerForm.controls['identityCode'].dirty || consumerForm.controls['identityCode'].touched)"
+      style="width:max-content;">
+      <div
+        *ngIf="(consumerForm.controls['identityCode'].errors)&&(consumerForm.controls['identityCode'].errors.required)"
+        class="alert alert-danger alert-dismissable" style="margin-right:5.5vh">
+        שדה חובה
+      </div>
+    </div>
+    <input type="password" formControlName="password" placeholder="ססמא">
+    <div *ngIf="(consumerForm.controls['password'].dirty || consumerForm.controls['password'].touched)"
+      style="width:max-content;">
+      <div *ngIf="(consumerForm.controls['password'].errors)&&(consumerForm.controls['password'].errors.required)"
+        class="alert alert-danger alert-dismissable" style="margin-right:5.5vh">
+        שדה חובה
+      </div>
+      <div *ngIf="(consumerForm.controls['password'].errors)&&(consumerForm.controls['password'].errors.pattern)"
+        class="alert alert-danger alert-dismissable" style="margin-right: 4vh;">
+        ערך לא חוקי
+      </div>
+    </div>
+    <input type="submit" value="הרשמה" [disabled]="!consumerForm.valid" class="btn btn-primary"
+      style="margin-right: 55%;">
+  </form>
+  <div class="col-5.5"></div>
+</div>

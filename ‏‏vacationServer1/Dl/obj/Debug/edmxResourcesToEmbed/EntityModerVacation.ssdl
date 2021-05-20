@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="vacationDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cityName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="compound">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="homeownerId" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="AmountOfBedsInTheWholeCompound" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="AmountOfMoreMattressesInTheWholeCompound" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MaximumAmountOfFamiliesInTheCompound" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="couldYuoRentPartOnly" Type="bit" Nullable="false" />
+    <Property Name="weekendPriceForTheWholeCompound" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="PricePerNightForTheWholeCompound" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="priceForSaturdayNightForTheWholeCompound" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="doesThePriceIncludeFood" Type="bit" />
+    <Property Name="lan" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="lng" Type="numeric" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="consumer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="identityCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="houseNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="postalCode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="homeowner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="identityCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="houseNumber" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="postalCode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apartmentId" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="compoundId" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="consumerId" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="arrivalTime" Type="datetime" Nullable="false" />
+    <Property Name="departureTime" Type="datetime" Nullable="false" />
+    <Property Name="AmountOfUsers" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="doesTheOrderIncludeFood" Type="bit" />
+    <Property Name="AmountOfPortionsOrdered" Type="numeric" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="pastOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apartmentId" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="compoundId" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="consumerId" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="arrivalTime" Type="datetime" Nullable="false" />
+    <Property Name="departureTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="vacationApartment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="compoundId" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="homeownerId" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="houseNumber" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="neighborhood" Type="nvarchar(max)" />
+    <Property Name="postalCode" Type="nvarchar(max)" />
+    <Property Name="floor" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="lan" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="lng" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="AmountOfRooms" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="beds" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="moreMattresses" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="aSynagogueNearby" Type="bit" Nullable="false" />
+    <Property Name="eruvAnTheNeighborhood" Type="bit" Nullable="false" />
+    <Property Name="linenSupplied" Type="bit" Nullable="false" />
+    <Property Name="Yard" Type="bit" Nullable="false" />
+    <Property Name="pool" Type="bit" Nullable="false" />
+    <Property Name="Jacuzzi" Type="bit" Nullable="false" />
+    <Property Name="AmountOfFloor" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="weekendPrice" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="PricePerNight" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="priceForSaturdayNight" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="doesThePriceIncludeFood" Type="bit" />
+    <Property Name="moreDetails" Type="nvarchar(max)" />
+    <Property Name="img" Type="image" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_compound_houseOwner">
+    <End Role="homeowner" Type="Self.homeowner" Multiplicity="1" />
+    <End Role="compound" Type="Self.compound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="homeowner">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compound">
+        <PropertyRef Name="homeownerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_compound">
+    <End Role="compound" Type="Self.compound" Multiplicity="1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compound">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="compoundId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_consumer">
+    <End Role="consumer" Type="Self.consumer" Multiplicity="1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="consumer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="consumerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_vacationApartment">
+    <End Role="vacationApartment" Type="Self.vacationApartment" Multiplicity="1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vacationApartment">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="apartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pastOrder_compound">
+    <End Role="compound" Type="Self.compound" Multiplicity="1" />
+    <End Role="pastOrder" Type="Self.pastOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compound">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pastOrder">
+        <PropertyRef Name="compoundId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pastOrder_consumer">
+    <End Role="consumer" Type="Self.consumer" Multiplicity="1" />
+    <End Role="pastOrder" Type="Self.pastOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="consumer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pastOrder">
+        <PropertyRef Name="consumerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pastOrder_vacationApartment">
+    <End Role="vacationApartment" Type="Self.vacationApartment" Multiplicity="1" />
+    <End Role="pastOrder" Type="Self.pastOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vacationApartment">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pastOrder">
+        <PropertyRef Name="apartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vacationApartment_compound">
+    <End Role="compound" Type="Self.compound" Multiplicity="1" />
+    <End Role="vacationApartment" Type="Self.vacationApartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compound">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vacationApartment">
+        <PropertyRef Name="compoundId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vacationApartment_houseOwner">
+    <End Role="homeowner" Type="Self.homeowner" Multiplicity="0..1" />
+    <End Role="vacationApartment" Type="Self.vacationApartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="homeowner">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vacationApartment">
+        <PropertyRef Name="homeownerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="vacationDBModelStoreContainer">
+    <EntitySet Name="cities" EntityType="Self.cities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="compound" EntityType="Self.compound" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consumer" EntityType="Self.consumer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="homeowner" EntityType="Self.homeowner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pastOrder" EntityType="Self.pastOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vacationApartment" EntityType="Self.vacationApartment" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_compound_houseOwner" Association="Self.FK_compound_houseOwner">
+      <End Role="homeowner" EntitySet="homeowner" />
+      <End Role="compound" EntitySet="compound" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_compound" Association="Self.FK_order_compound">
+      <End Role="compound" EntitySet="compound" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_consumer" Association="Self.FK_order_consumer">
+      <End Role="consumer" EntitySet="consumer" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_vacationApartment" Association="Self.FK_order_vacationApartment">
+      <End Role="vacationApartment" EntitySet="vacationApartment" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pastOrder_compound" Association="Self.FK_pastOrder_compound">
+      <End Role="compound" EntitySet="compound" />
+      <End Role="pastOrder" EntitySet="pastOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pastOrder_consumer" Association="Self.FK_pastOrder_consumer">
+      <End Role="consumer" EntitySet="consumer" />
+      <End Role="pastOrder" EntitySet="pastOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pastOrder_vacationApartment" Association="Self.FK_pastOrder_vacationApartment">
+      <End Role="vacationApartment" EntitySet="vacationApartment" />
+      <End Role="pastOrder" EntitySet="pastOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vacationApartment_compound" Association="Self.FK_vacationApartment_compound">
+      <End Role="compound" EntitySet="compound" />
+      <End Role="vacationApartment" EntitySet="vacationApartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vacationApartment_houseOwner" Association="Self.FK_vacationApartment_houseOwner">
+      <End Role="homeowner" EntitySet="homeowner" />
+      <End Role="vacationApartment" EntitySet="vacationApartment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

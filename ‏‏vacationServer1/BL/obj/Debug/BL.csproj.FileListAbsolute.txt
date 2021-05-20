@@ -1,0 +1,15 @@
+D:\endProject\vacationServer\BL\obj\Debug\BL.csprojAssemblyReference.cache
+D:\endProject\vacationServer\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+D:\endProject\vacationServer\BL\bin\Debug\BL.dll
+D:\endProject\vacationServer\BL\bin\Debug\BL.pdb
+D:\endProject\vacationServer\BL\bin\Debug\Dl.dll
+D:\endProject\vacationServer\BL\bin\Debug\EntityFramework.dll
+D:\endProject\vacationServer\BL\bin\Debug\Dl.pdb
+D:\endProject\vacationServer\BL\bin\Debug\Dl.dll.config
+D:\endProject\vacationServer\BL\bin\Debug\EntityFramework.xml
+D:\endProject\vacationServer\BL\obj\Debug\BL.csproj.CopyComplete
+D:\endProject\vacationServer\BL\obj\Debug\BL.dll
+D:\endProject\vacationServer\BL\obj\Debug\BL.pdb
+D:\endProject\vacationServer\BL\bin\Debug\BL.dll.config
+D:\endProject\vacationServer\BL\bin\Debug\EntityFramework.SqlServer.dll
+D:\endProject\vacationServer\BL\bin\Debug\EntityFramework.SqlServer.xml

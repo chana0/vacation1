@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(224, 236, 247);
+    text-align: center;
+}
+full-calendar{
+margin: auto;
+padding: 6%;
+padding-top: 4%;
+height: 90vh;
+}

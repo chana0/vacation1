@@ -1,0 +1,394 @@
+<body>
+  <div class="col-5.5"></div>
+  <div class="col-1" style="padding-top: 7vh;padding-bottom: 7vh;display:inline-table;">
+    <form [formGroup]="homeownerForm" (ngSubmit)="insert()" class="row" *ngIf="isOpenApartmentForm==false">
+      <input type="text" placeholder="שם פרטי" formControlName="firstName">
+      <div *ngIf="(homeownerForm.controls['firstName'].dirty || homeownerForm.controls['firstName'].touched)">
+        <div *ngIf="(homeownerForm.controls['firstName'].errors)&&(homeownerForm.controls['firstName'].errors.required)"
+          class="alert alert-danger alert-dismissable" style="margin-right: 5.5vh;">
+          שדה חובה
+        </div>
+        <div *ngIf="(homeownerForm.controls['firstName'].errors)&&(homeownerForm.controls['firstName'].errors.pattern)"
+          class="alert alert-danger alert-dismissable">
+          יש לכתוב שם פרטי בעברית
+        </div>
+      </div>
+      <input type="text" placeholder="שם משפחה" formControlName="lastName">
+      <div *ngIf="(homeownerForm.controls['lastName'].dirty || homeownerForm.controls['lastName'].touched)">
+        <div *ngIf="(homeownerForm.controls['lastName'].errors)&&(homeownerForm.controls['lastName'].errors.required)"
+          class="alert alert-danger alert-dismissable" style="margin-right: 5.5vh;">
+          שדה חובה
+        </div>
+        <div *ngIf="(homeownerForm.controls['lastName'].errors)&&(homeownerForm.controls['lastName'].errors.pattern)"
+          class="alert alert-danger alert-dismissable">
+          יש לכתוב שם משפחה בעברית
+        </div>
+      </div>
+      <input type="text" placeholder="טלפון" formControlName="telephon">
+      <div *ngIf="(homeownerForm.controls['telephon'].dirty || homeownerForm.controls['telephon'].touched)">
+        <div *ngIf="(homeownerForm.controls['telephon'].errors)&&(homeownerForm.controls['telephon'].errors.required)"
+          class="alert alert-danger alert-dismissable" style="margin-right: 5.5vh;">
+          שדה חובה
+        </div>
+        <div *ngIf="(homeownerForm.controls['telephon'].errors)&&(homeownerForm.controls['telephon'].errors.pattern)"
+          class="alert alert-danger alert-dismissable" style="margin-right:4vh;">
+          ערך לא חוקי
+        </div>
+      </div>
+      <input type="text" placeholder="פלאפון " formControlName="pelephon">
+      <div *ngIf="(homeownerForm.controls['pelephon'].dirty || homeownerForm.controls['pelephon'].touched)">
+        <div *ngIf="(homeownerForm.controls['pelephon'].errors)&&(homeownerForm.controls['pelephon'].errors.required)"
+          class="alert alert-danger alert-dismissable" style="margin-right: 5.5vh;">
+          שדה חובה
+        </div>
+        <div *ngIf="(homeownerForm.controls['pelephon'].errors)&&(homeownerForm.controls['pelephon'].errors.pattern)"
+          class="alert alert-danger alert-dismissable" style="margin-right:4vh;">
+          ערך לא חוקי
+        </div>
+      </div>
+      <input type="text" placeholder="דואר אלקטרוני" formControlName="email">
+      <div *ngIf="(homeownerForm.controls['email'].dirty || homeownerForm.controls['email'].touched)">
+        <div *ngIf="(homeownerForm.controls['email'].errors)&&(homeownerForm.controls['email'].errors.required)"
+          class="alert alert-danger alert-dismissable" style="margin-right:5.5vh;">
+          שדה חובה
+        </div>
+        <div *ngIf="(homeownerForm.controls['email'].errors)&&(homeownerForm.controls['email'].errors.email)"
+          class="alert alert-danger alert-dismissable" style="margin-right:4vh;">
+          ערך לא חוקי
+        </div>
+      </div>
+      <input type="text" placeholder="עיר" formControlName="city">
+      <div *ngIf="(homeownerForm.controls['city'].dirty || homeownerForm.controls['city'].touched)">
+        <div *ngIf="(homeownerForm.controls['city'].errors)&&(homeownerForm.controls['city'].errors.required)"
+          class="alert alert-danger alert-dismissable" style="margin-right:5.5vh;">
+          שדה חובה
+        </div>
+        <div *ngIf="(homeownerForm.controls['city'].errors)&&(homeownerForm.controls['city'].errors.pattern)"
+          class="alert alert-danger alert-dismissable" style="margin-right:4vh;">
+          ערך לא חוקי
+        </div>
+      </div>
+      <input type="text" placeholder="רחוב" formControlName="street">
+      <div *ngIf="(homeownerForm.controls['street'].dirty || homeownerForm.controls['street'].touched)">
+        <div *ngIf="(homeownerForm.controls['street'].errors)&&(homeownerForm.controls['street'].errors.required)"
+          class="alert alert-danger alert-dismissable" style="margin-right:5.5vh;">
+          שדה חובה
+        </div>
+        <div *ngIf="(homeownerForm.controls['street'].errors)&&(homeownerForm.controls['street'].errors.pattern)"
+          class="alert alert-danger alert-dismissable" style="margin-right:4vh;">
+          ערך לא חוקי
+        </div>
+      </div>
+      <input type="number" placeholder="מספר בנין" formControlName="buildingNumber">
+      <div *ngIf="(homeownerForm.controls['buildingNumber'].dirty || homeownerForm.controls['buildingNumber'].touched)">
+        <div
+          *ngIf="(homeownerForm.controls['buildingNumber'].errors)&&(homeownerForm.controls['buildingNumber'].errors.required)"
+          class="alert alert-danger alert-dismissable" style="margin-right: 5vh;">
+          שדה חובה
+        </div>
+        <div
+          *ngIf="(homeownerForm.controls['buildingNumber'].errors)&&(homeownerForm.controls['buildingNumber'].errors.min)"
+          class="alert alert-danger alert-dismissable" style="margin-right:4vh;">
+          ערך לא חוקי
+        </div>
+      </div>
+      <input type="text" placeholder="מיקוד" formControlName="zipCode">
+      <div *ngIf="(homeownerForm.controls['zipCode'].dirty || homeownerForm.controls['zipCode'].touched)">
+        <div *ngIf="(homeownerForm.controls['zipCode'].errors)&&(homeownerForm.controls['zipCode'].errors.pattern)"
+          class="alert alert-danger alert-dismissable" style="margin-right:4vh;">
+          ערך לא חוקי
+        </div>
+      </div>
+      <input type="text" placeholder="קוד זהוי" formControlName="identityCode">
+      <div *ngIf="(homeownerForm.controls['identityCode'].dirty || homeownerForm.controls['identityCode'].touched)">
+        <div
+          *ngIf="(homeownerForm.controls['identityCode'].errors)&&(homeownerForm.controls['identityCode'].errors.required)"
+          class="alert alert-danger alert-dismissable" style="margin-right:5.5vh;">
+          שדה חובה
+        </div>
+      </div>
+      <input type="password" placeholder="ססמא" formControlName="password">
+      <div *ngIf="(homeownerForm.controls['password'].dirty || homeownerForm.controls['password'].touched)">
+        <div *ngIf="(homeownerForm.controls['password'].errors)&&(homeownerForm.controls['password'].errors.required)"
+          class="alert alert-danger alert-dismissable" style="margin-right:5.5vh;">
+          שדה חובה
+        </div>
+        <div *ngIf="(homeownerForm.controls['password'].errors)&&(homeownerForm.controls['password'].errors.pattern)"
+          class="alert alert-danger alert-dismissable" style="margin-right:4vh;">
+          ערך לא חוקי
+        </div>
+      </div>
+      <input type="submit" value="הוספה" class="btn btn-primary" id="submit"
+        [attr.disabled]="((!homeownerForm.valid)||(apartmentObjectFill==false))? true : null">
+    </form>
+    <div>
+      <input type="button" (click)="transferToInsertApartment()" id="insertApartment" value="הוספת דירת נופש "
+        class="btn btn-primary" *ngIf="isOpenApartmentForm==false">
+    </div>
+    <form [formGroup]="apartmentForm" (ngSubmit)="complete()" *ngIf="isOpenApartmentForm==true">
+      <label for="name"> שם:</label>
+      <br>
+      <input type="text" formControlName="name" id="name">
+      <br>
+      <div
+        *ngIf="((apartmentForm.controls['name'])&&apartmentForm.controls['name'].dirty ||(apartmentForm.controls['name'])&&apartmentForm.controls['name'].touched)">
+        <div *ngIf="(apartmentForm.controls['name'].errors)&&(apartmentForm.controls['name'].errors.required)"
+          class="alert alert-danger alert-dismissable">
+          שדה חובה
+        </div>
+        <div *ngIf="(apartmentForm.controls['name'].errors)&&(apartmentForm.controls['name'].errors.pattern)"
+          class="alert alert-danger alert-dismissable">
+          יש לכתוב שם בעברית
+        </div>
+      </div>
+      <label for="street"> רחוב:</label>
+      <br>
+      <input type="text" formControlName="street" id="street" placeholder="רחוב">
+      <br>
+      <div *ngIf="(apartmentForm.controls['street'].dirty || apartmentForm.controls['street'].touched)">
+        <div *ngIf="(apartmentForm.controls['street'].errors)&&(apartmentForm.controls['street'].errors.required)"
+          class="alert alert-danger alert-dismissable">
+          שדה חובה
+        </div>
+        <div *ngIf="(apartmentForm.controls['street'].errors)&&(apartmentForm.controls['street'].errors.pattern)"
+          class="alert alert-danger alert-dismissable">
+          ערך לא חוקי
+        </div>
+      </div>
+      <label for="buildingNumber">מספר בנין:</label>
+      <br>
+      <input type="number" formControlName="buildingNumber" id="buildingNumber" placeholder="מספר בנין">
+      <br>
+      <div *ngIf="(apartmentForm.controls['buildingNumber'].dirty || apartmentForm.controls['buildingNumber'].touched)">
+        <div
+          *ngIf="(apartmentForm.controls['buildingNumber'].errors)&&(apartmentForm.controls['buildingNumber'].errors.required)"
+          class="alert alert-danger alert-dismissable">
+          שדה חובה
+        </div>
+        <div
+          *ngIf="(apartmentForm.controls['buildingNumber'].errors)&&(apartmentForm.controls['buildingNumber'].errors.min)"
+          class="alert alert-danger alert-dismissable">
+          ערך לא חוקי
+        </div>
+      </div>
+      <label for="floor"> קומה:</label>
+      <br>
+      <input type="number" formControlName="floor" id="floor" placeholder="קומה">
+      <br>
+      <div
+        *ngIf="(apartmentForm.controls['floor']&&apartmentForm.controls['floor'].dirty ||apartmentForm.controls['floor']&&apartmentForm.controls['floor'].touched)">
+        <div *ngIf="(apartmentForm.controls['floor'].errors)&&(apartmentForm.controls['floor'].errors.required)"
+          class="alert alert-danger alert-dismissable">
+          שדה חובה
+        </div>
+        <div *ngIf="(apartmentForm.controls['floor'].errors)&&
+          ((apartmentForm.controls['floor'].errors.min)||(apartmentForm.controls['floor'].errors.max))"
+          class="alert alert-danger alert-dismissable">
+          ערך לא חוקי
+        </div>
+      </div>
+      <label for="neighborhood">שכונה:</label>
+      <br>
+      <input type="text" formControlName="neighborhood" id="neighborhood" placeholder="שכונה">
+      <br>
+      <div
+        *ngIf="(apartmentForm.controls['neighborhood']&&apartmentForm.controls['neighborhood'].dirty ||apartmentForm.controls['neighborhood']&&apartmentForm.controls['neighborhood'].touched)">
+        <div
+          *ngIf="(apartmentForm.controls['neighborhood'].errors)&&(apartmentForm.controls['neighborhood'].errors.required)"
+          class="alert alert-danger alert-dismissable">
+          שדה חובה
+        </div>
+        <div
+          *ngIf="(apartmentForm.controls['neighborhood'].errors)&&(apartmentForm.controls['neighborhood'].errors.pattern)"
+          class="alert alert-danger alert-dismissable">
+          ערך לא חוקי
+        </div>
+      </div>
+      <label for="city"> עיר:</label>
+      <br>
+      <input type="text" formControlName="city" id="city" placeholder="עיר">
+      <br>
+      <div *ngIf="(apartmentForm.controls['city'].dirty || apartmentForm.controls['city'].touched)">
+        <div *ngIf="(apartmentForm.controls['city'].errors)&&(apartmentForm.controls['city'].errors.required)"
+          class="alert alert-danger alert-dismissable">
+          שדה חובה
+        </div>
+        <div *ngIf="(apartmentForm.controls['city'].errors)&&(apartmentForm.controls['city'].errors.pattern)"
+          class="alert alert-danger alert-dismissable">
+          ערך לא חוקי
+        </div>
+      </div>
+      <label for="zipCode">מיקוד:</label>
+      <br>
+      <input type="text" formControlName="zipCode" id="zipCode" placeholder="מיקוד">
+      <div *ngIf="(apartmentForm.controls['zipCode'].dirty || apartmentForm.controls['zipCode'].touched)">
+        <div *ngIf="(apartmentForm.controls['zipCode'].errors)&&(apartmentForm.controls['zipCode'].errors.pattern)"
+          class="alert alert-danger alert-dismissable">
+          ערך לא חוקי
+        </div>
+      </div>
+      <br>
+      <label for="amountOfRooms">מספר חדרים בדירה:</label>
+      <input type="number" formControlName="amountOfRooms" id="amountOfRooms" placeholder="מספר חדרים בדירה">
+      <div
+        *ngIf="(apartmentForm.controls['amountOfRooms']&&apartmentForm.controls['amountOfRooms'].dirty ||apartmentForm.controls['amountOfRooms']&&apartmentForm.controls['amountOfRooms'].touched)">
+        <div
+          *ngIf="(apartmentForm.controls['amountOfRooms'].errors)&&(apartmentForm.controls['amountOfRooms'].errors.required)"
+          class="alert alert-danger alert-dismissable">
+          שדה חובה
+        </div>
+        <div *ngIf="(apartmentForm.controls['amountOfRooms'].errors)&&
+        (apartmentForm.controls['amountOfRooms'].errors.min||apartmentForm.controls['amountOfRooms'].errors.max)"
+          class="alert alert-danger alert-dismissable">
+          ערך לא חוקי
+        </div>
+      </div>
+      <label for="amountOfFloor">כמה קומות בדירה?</label>
+      <br>
+      <input type="number" formControlName="amountOfFloor" id="amountOfFloor" placeholder="כמות קומות בדירה">
+      <div
+        *ngIf="(apartmentForm.controls['amountOfFloor']&&apartmentForm.controls['amountOfFloor'].dirty ||apartmentForm.controls['amountOfFloor']&&apartmentForm.controls['amountOfFloor'].touched)">
+        <div
+          *ngIf="(apartmentForm.controls['amountOfFloor'].errors)&&(apartmentForm.controls['amountOfFloor'].errors.required)"
+          class="alert alert-danger alert-dismissable">
+          שדה חובה
+        </div>
+        <div *ngIf="(apartmentForm.controls['amountOfFloor'].errors)&&
+        (apartmentForm.controls['amountOfFloor'].errors.min||apartmentForm.controls['amountOfFloor'].errors.max)"
+          class="alert alert-danger alert-dismissable">
+          ערך לא חוקי
+        </div>
+      </div>
+      <label for="beds">מספר מיטות בדירה :</label>
+      <br>
+      <input type="number" formControlName="beds" id="beds" placeholder="מספר  מיטות בדירה">
+      <div
+        *ngIf="(apartmentForm.controls['beds']&&apartmentForm.controls['beds'].dirty ||apartmentForm.controls['beds']&& apartmentForm.controls['beds'].touched)">
+        <div *ngIf="(apartmentForm.controls['beds'].errors)&&(apartmentForm.controls['beds'].errors.required)"
+          class="alert alert-danger alert-dismissable">
+          שדה חובה
+        </div>
+        <div *ngIf="(apartmentForm.controls['beds'].errors)&&
+        (apartmentForm.controls['beds'].errors.max||apartmentForm.controls['beds'].errors.min)"
+          class="alert alert-danger alert-dismissable">
+          ערך לא חוקי
+        </div>
+      </div>
+      <label for="yard">האם הדירה כוללת חצר?</label>
+      <br>
+      <input type="checkbox" formControlName="yard" id="yard">
+      <br>
+      <label for="jacuzzi"> האם הדירה כוללת ג'קוזי?</label>
+      <br>
+      <input type="checkbox" formControlName="jacuzzi" id="jacuzzi">
+      <br>
+      <label for="pool">דירה כוללת בריכה?</label>
+      <br>
+      <input type="checkbox" formControlName="pool" id="pool">
+
+      <br>
+      <label for="aSynagogueNearby">? האם יש ביהכנ''ס</label>
+      <br>
+      <input type="checkbox" formControlName="aSynagogueNearby" id="aSynagogueNearby"
+        placeholder="האם יש ביהכ''ס באיזור?'">
+      <br>
+      <label for="eruvAnTheNeighborhood">?האם יש עירוב באיזור?</label>
+      <br>
+      <input type="checkbox" formControlName="eruvAnTheNeighborhood" id="eruvAnTheNeighborhood"
+        placeholder="האם יש עירוב באיזור?">
+      <br>
+      <br>
+      <div formGroupName="price">
+        <label for="pricePerNight">מחיר ללילה באמצע שבוע
+          המחיר כולל:
+          <br>
+          אספקת הדירה
+          <br>
+          מ11:00 בבוקר ועד 9:00 בבוקר למחרת
+        </label>
+        <br>
+        <input type="number" formControlName="pricePerNight" id="pricePerNight">
+        <div
+          *ngIf="(apartmentForm.controls['pricePerNight']&&apartmentForm.controls['pricePerNight'].dirty ||apartmentForm.controls['pricePerNight']&&apartmentForm.controls['pricePerNight'].touched)">
+          <div
+            *ngIf="(apartmentForm.controls['pricePerNight'].errors)&&(apartmentForm.controls['pricePerNight'].errors.required)"
+            class="alert alert-danger alert-dismissable">
+            שדה חובה
+          </div>
+          <div *ngIf="(apartmentForm.controls['pricePerNight'].errors)&&
+          (apartmentForm.controls['pricePerNight'].errors.min||apartmentForm.controls['pricePerNight'].errors.max)"
+            class="alert alert-danger alert-dismissable">
+            ערך לא חוקי
+          </div>
+        </div>
+        <label for="weekendPrice">
+          מחיר לסוף שבוע
+          <br>
+          המחיר כולל :
+          <br>
+          אספקת הדירה
+          <br>
+          החל מיום שישי בשעה 11:00 בצהריים
+          <br>
+          ועד מוצאי שבת בשעה 21:00
+        </label>
+        <br>
+        <input type="number" formControlName="weekendPrice" id="weekendPrice">
+        <div
+          *ngIf="(apartmentForm.controls['weekendPrice']&&apartmentForm.controls['weekendPrice'].dirty ||apartmentForm.controls['weekendPrice']&&apartmentForm.controls['weekendPrice'].touched)">
+          <div
+            *ngIf="(apartmentForm.controls['weekendPrice'].errors)&&(apartmentForm.controls['weekendPrice'].errors.required)"
+            class="alert alert-danger alert-dismissable">
+            שדה חובה
+          </div>
+          <div
+            *ngIf="(apartmentForm.controls['weekendPrice'].errors)&&(apartmentForm.controls['weekendPrice'].errors.min||apartmentForm.controls['weekendPrice'].errors.max)"
+            class="alert alert-danger alert-dismissable">
+            ערך לא חוקי
+          </div>
+        </div>
+        <label for="priceForSaturdayNight">מחיר למוצאי שבת
+          המחיר כולל:
+          <br>
+          אספקת הדירה החל ממוצאי שבת בשעה 23:00
+          <br>
+          ועד יום ראשון בשעה 9:00 בבוקר
+        </label>
+        <br>
+        <input type="number" formControlName="priceForSaturdayNight" id="priceForSaturdayNight">
+        <div
+          *ngIf="(apartmentForm.controls['priceForSaturdayNight']&&apartmentForm.controls['priceForSaturdayNight'].dirty ||apartmentForm.controls['priceForSaturdayNight']&&apartmentForm.controls['priceForSaturdayNight'].touched)">
+          <div
+            *ngIf="(apartmentForm.controls['priceForSaturdayNight'].errors)&&(apartmentForm.controls['priceForSaturdayNight'].errors.required)"
+            class="alert alert-danger alert-dismissable">
+            שדה חובה
+          </div>
+          <div
+            *ngIf="(apartmentForm.controls['priceForSaturdayNight'].errors)&&
+          (apartmentForm.controls['priceForSaturdayNight'].errors.min||apartmentForm.controls['priceForSaturdayNight'].errors.max)"
+            class="alert alert-danger alert-dismissable">
+            ערך לא חוקי
+          </div>
+        </div>
+      </div>
+      <label for="moreDetails">פרטים נוספים:</label>
+      <br>
+      <textarea formControlName="moreDetails" id="moreDetails"></textarea>
+      <br>
+      <label for="picture">תמונה להתרשמות מן הדירה:</label>
+      <br>
+      <input type="file" id="picture" placeholder="בחר תמונה" #Picture style="margin-right: 17%;"
+        formControlName="picture" accept=".png,.jpeg,.JPEG,.gif,.jpg,.JPG">
+      <div
+        *ngIf="(apartmentForm.controls['picture']&&apartmentForm.controls['picture'].dirty ||apartmentForm.controls['picture']&&apartmentForm.controls['picture'].touched)">
+        <div *ngIf="(apartmentForm.controls['picture'].errors)&&(apartmentForm.controls['picture'].errors.required)"
+          class="alert alert-danger alert-dismissable">
+          שדה חובה
+        </div>
+      </div>
+      <br>
+      <input type="submit" value="שמירה" [disabled]="!apartmentForm.valid" class="btn btn-primary">
+    </form>
+  </div>
+  <div class="col-5.5"></div>
+</body>

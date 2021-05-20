@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+/*כדאי למחוק את זה*/
+@import '~bootstrap/dist/css/bootstrap.min.css';
+/*כדאי למחוק את זה*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; 
+html,body{
+    min-height: 99.6vh;
+    /* height: 100%; */
+    /* height: auto;  */
+    width: 100%;
+    background: round;
+  
+}
+body{
+    margin: auto;
+    text-align: center;
+    margin: 0px;
+    font-family: Roboto,
+    "Helvetica Neue",
+    sans-serif
+}

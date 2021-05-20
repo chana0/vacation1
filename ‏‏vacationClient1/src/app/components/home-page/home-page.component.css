@@ -1,0 +1,11 @@
+body{
+    align-items: flex-start;;
+    justify-content: center;
+    margin: auto;
+    background-color: rgb(224, 236, 247);
+    width: 100%;
+}
+input{
+    color: rgb(6, 52, 122);
+}
+

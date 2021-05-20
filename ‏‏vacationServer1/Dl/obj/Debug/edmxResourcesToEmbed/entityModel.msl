@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="vacationDBModelStoreContainer" CdmEntityContainer="vacationDBEntities">
+    <EntitySetMapping Name="compound">
+      <EntityTypeMapping TypeName="vacationDBModel.compound">
+        <MappingFragment StoreEntitySet="compound">
+          <ScalarProperty Name="homeownerId" ColumnName="homeownerId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="AmountOfBedsInTheWholeCompound" ColumnName="AmountOfBedsInTheWholeCompound" />
+          <ScalarProperty Name="AmountOfMoreMattressesInTheWholeCompound" ColumnName="AmountOfMoreMattressesInTheWholeCompound" />
+          <ScalarProperty Name="MaximumAmountOfFamiliesInTheCompound" ColumnName="MaximumAmountOfFamiliesInTheCompound" />
+          <ScalarProperty Name="couldYuoRentPartOnly" ColumnName="couldYuoRentPartOnly" />
+          <ScalarProperty Name="weekendPriceForTheWholeCompound" ColumnName="weekendPriceForTheWholeCompound" />
+          <ScalarProperty Name="PricePerNightForTheWholeCompound" ColumnName="PricePerNightForTheWholeCompound" />
+          <ScalarProperty Name="priceForSaturdayNightForTheWholeCompound" ColumnName="priceForSaturdayNightForTheWholeCompound" />
+          <ScalarProperty Name="doesThePriceIncludeFood" ColumnName="doesThePriceIncludeFood" />
+          <ScalarProperty Name="weekendPriceForTheWholeCompoundIncludingFood" ColumnName="weekendPriceForTheWholeCompoundIncludingFood" />
+          <ScalarProperty Name="PricePerNightForTheWholeCompoundIncludingFood" ColumnName="PricePerNightForTheWholeCompoundIncludingFood" />
+          <ScalarProperty Name="priceForSaturdayNightForTheWholeCompoundIncludingFood" ColumnName="priceForSaturdayNightForTheWholeCompoundIncludingFood" />
+          <ScalarProperty Name="MaximumAmountOfPortionsThatCanBeOrderedWhenOrderingTheWholeCompound" ColumnName="MaximumAmountOfPortionsThatCanBeOrderedWhenOrderingTheWholeCompound" />
+          <ScalarProperty Name="lan" ColumnName="lan" />
+          <ScalarProperty Name="lng" ColumnName="lng" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consumer">
+      <EntityTypeMapping TypeName="vacationDBModel.consumer">
+        <MappingFragment StoreEntitySet="consumer">
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="identityCode" ColumnName="identityCode" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="pel" ColumnName="pel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="houseNumber" ColumnName="houseNumber" />
+          <ScalarProperty Name="postalCode" ColumnName="postalCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order">
+      <EntityTypeMapping TypeName="vacationDBModel.order">
+        <MappingFragment StoreEntitySet="order">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="apartmentId" ColumnName="apartmentId" />
+          <ScalarProperty Name="compoundId" ColumnName="compoundId" />
+          <ScalarProperty Name="consumerId" ColumnName="consumerId" />
+          <ScalarProperty Name="arrivalTime" ColumnName="arrivalTime" />
+          <ScalarProperty Name="departureTime" ColumnName="departureTime" />
+          <ScalarProperty Name="AmountOfUsers" ColumnName="AmountOfUsers" />
+          <ScalarProperty Name="doesTheOrderIncludeFood" ColumnName="doesTheOrderIncludeFood" />
+          <ScalarProperty Name="AmountOfPortionsOrdered" ColumnName="AmountOfPortionsOrdered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pastOrder">
+      <EntityTypeMapping TypeName="vacationDBModel.pastOrder">
+        <MappingFragment StoreEntitySet="pastOrder">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="apartmentId" ColumnName="apartmentId" />
+          <ScalarProperty Name="compoundId" ColumnName="compoundId" />
+          <ScalarProperty Name="consumerId" ColumnName="consumerId" />
+          <ScalarProperty Name="arrivalTime" ColumnName="arrivalTime" />
+          <ScalarProperty Name="departureTime" ColumnName="departureTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="vacationDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vacationApartment">
+      <EntityTypeMapping TypeName="vacationDBModel.vacationApartment">
+        <MappingFragment StoreEntitySet="vacationApartment">
+          <ScalarProperty Name="homeownerId" ColumnName="homeownerId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="compoundId" ColumnName="compoundId" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="houseNumber" ColumnName="houseNumber" />
+          <ScalarProperty Name="neighborhood" ColumnName="neighborhood" />
+          <ScalarProperty Name="postalCode" ColumnName="postalCode" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+          <ScalarProperty Name="lan" ColumnName="lan" />
+          <ScalarProperty Name="lng" ColumnName="lng" />
+          <ScalarProperty Name="isTheApartmentAlwaysAvailable" ColumnName="isTheApartmentAlwaysAvailable" />
+          <ScalarProperty Name="theNextTimeTheApartmentWillBeAvailableFrom" ColumnName="theNextTimeTheApartmentWillBeAvailableFrom" />
+          <ScalarProperty Name="theNextTimeTheApartmentWillBeAvailableUntil" ColumnName="theNextTimeTheApartmentWillBeAvailableUntil" />
+          <ScalarProperty Name="AmountOfRooms" ColumnName="AmountOfRooms" />
+          <ScalarProperty Name="beds" ColumnName="beds" />
+          <ScalarProperty Name="moreMattresses" ColumnName="moreMattresses" />
+          <ScalarProperty Name="aSynagogueNearby" ColumnName="aSynagogueNearby" />
+          <ScalarProperty Name="eruvAnTheNeighborhood" ColumnName="eruvAnTheNeighborhood" />
+          <ScalarProperty Name="linenSupplied" ColumnName="linenSupplied" />
+          <ScalarProperty Name="Yard" ColumnName="Yard" />
+          <ScalarProperty Name="pool" ColumnName="pool" />
+          <ScalarProperty Name="Jacuzzi" ColumnName="Jacuzzi" />
+          <ScalarProperty Name="AmountOfFloor" ColumnName="AmountOfFloor" />
+          <ScalarProperty Name="weekendPrice" ColumnName="weekendPrice" />
+          <ScalarProperty Name="PricePerNight" ColumnName="PricePerNight" />
+          <ScalarProperty Name="priceForSaturdayNight" ColumnName="priceForSaturdayNight" />
+          <ScalarProperty Name="doesThePriceIncludeFood" ColumnName="doesThePriceIncludeFood" />
+          <ScalarProperty Name="weekendPriceIncludingFood" ColumnName="weekendPriceIncludingFood" />
+          <ScalarProperty Name="PricePerNightIncludingFood" ColumnName="PricePerNightIncludingFood" />
+          <ScalarProperty Name="priceForSaturdayNightIncludingFood" ColumnName="priceForSaturdayNightIncludingFood" />
+          <ScalarProperty Name="MaximumAmountOfPortionsThatCanBeOrderedForThisPrice" ColumnName="MaximumAmountOfPortionsThatCanBeOrderedForThisPrice" />
+          <ScalarProperty Name="hecherOfTheFood" ColumnName="hecherOfTheFood" />
+          <ScalarProperty Name="moreDetails" ColumnName="moreDetails" />
+          <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="vacationDBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="vacationDBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="vacationDBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="vacationDBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vacationDBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="vacationDBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vacationDBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="vacationDBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="vacationDBModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="homeowner">
+      <EntityTypeMapping TypeName="vacationDBModel.homeowner">
+        <MappingFragment StoreEntitySet="homeowner">
+          <ScalarProperty Name="postalCode" ColumnName="postalCode" />
+          <ScalarProperty Name="houseNumber" ColumnName="houseNumber" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pel" ColumnName="pel" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="identityCode" ColumnName="identityCode" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

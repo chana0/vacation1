@@ -1,0 +1,64 @@
+<body>
+    <app-menu></app-menu>
+    <div style="margin: auto; width: 100%; text-align: center;" class="container">
+        <div class="row d-flex justify-content-center flex-column align-items-center"
+            style="min-height: 80vh;margin-top: 3%;min-block-size: auto;">
+            <table class="table table-bordered" *ngIf="yieldedResults">
+                <tr>
+                    <th>שם</th>
+                    <th>כתובת</th>
+                    <th>כמות מיטות</th>
+                    <th>כמות חדרים</th>
+                    <th>חצר</th>
+                    <th>ג'קוזי</th>
+                    <th>בריכה</th>
+                    <th>ביהכנ''ס</th>
+                    <th>עירוב</th>
+                    <th>מחיר ללילה</th>
+                    <th>מחיר לסופ''ש</th>
+                    <th>מחיר למוצ''ש</th>
+                    <th>פרטיס נוספים</th>
+                </tr>
+                <tr *ngFor="let apartment of apartments" (click)="interestInTheApartment(apartment)">
+                    <th>{{apartment.name}}</th>
+                    <th>
+                        <p>{{apartment.street}} {{apartment.buildingNumber}} קומה{{apartment.floor}}
+                            {{apartment.neighborhood}} {{apartment.city}} </p>
+                    </th>
+                    <th>{{apartment.beds}}</th>
+                    <th>{{apartment.amountOfRooms}}</th>
+                    <th>
+                        <p *ngIf="apartment.yard">v</p>
+                        <p *ngIf="apartment.yard==false">x</p>
+                    </th>
+                    <th>
+                        <p *ngIf="apartment.jacuzzi">v</p>
+                        <p *ngIf="apartment.jacuzzi==false">x</p>
+                    </th>
+                    <th>
+                        <p *ngIf="apartment.pool">v</p>
+                        <p *ngIf="apartment.pool==false">x</p>
+                    </th>
+                    <th>
+                        <p *ngIf="apartment.aSynagogueNearby">v</p>
+                        <p *ngIf="apartment.aSynagogueNearby==false">x</p>
+                    </th>
+                    <th>
+                        <p *ngIf="apartment.eruvAnTheNeighborhood">v</p>
+                        <p *ngIf="apartment.eruvAnTheNeighborhood==false">x</p>
+                    </th>
+                    <th>{{apartment.pricePerNight}}</th>
+                    <th>{{apartment.weekendPrice}}</th>
+                    <th>{{apartment.priceForSaturdayNight}}</th>
+                    <th>{{apartment.moreDetails}}</th>
+                    <th>
+                        <img [src]="apartment.picture" width="90px" height="90px">
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div *ngIf="yieldedResults==false" style="margin-top: 20%;">
+            אין דירות שעונות על תנאי החיפוס שהצבת
+        </div>
+    </div>
+</body>

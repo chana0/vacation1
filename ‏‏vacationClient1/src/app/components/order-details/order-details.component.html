@@ -1,0 +1,17 @@
+<body>
+  <div class="card border-dark w-75">
+    <div class="card-body">
+      <h5 class="card-title">פרטי ההזמנה:</h5>
+      <div class="card-text">
+        מ:{{order.arrivalTime| date:"dd/MM/yyyy"}}
+        עד:{{order.departureTime| date:"dd/MM/yyyy"}}
+        <h5>
+          פרטי הצרכן:
+        </h5>
+        {{consumer.firstName}} {{consumer.lastName}}
+        <br>
+        {{consumer.tel}} {{consumer.pel}} {{consumer.email}}
+      </div>
+    </div>
+  </div>
+</body>

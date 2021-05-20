@@ -1,0 +1,38 @@
+<body>
+    <h1>{{apartmentInterestedIn.name}}</h1>
+    <label>רחוב {{apartmentInterestedIn.street}} {{apartmentInterestedIn.buildingNumber}} קומה
+        {{apartmentInterestedIn.floor}}
+    </label>
+    <label> {{apartmentInterestedIn.city}}</label>
+    <br>
+    <label>פרטים ליצירת קשר לבירורים נוספים:</label>
+    <br>
+    <label>{{homeownerOfApartmentInterestedIn.firstName}}
+        {{homeownerOfApartmentInterestedIn.lastName}}</label>
+    <br>
+    <label>
+        טלפון:{{homeownerOfApartmentInterestedIn.tel}}
+        <br>
+        פלאפון:{{homeownerOfApartmentInterestedIn.pel}}
+        <br>
+        דואר אלקטרוני:{{homeownerOfApartmentInterestedIn.email}}
+    </label>
+    <h3>{{apartmentInterestedIn.city}}</h3>
+    <div class="card border-dark container">
+        <h5 class="card-header">הזמנה</h5>
+        <div class="card-body">
+            <h5 class="card-title">באילו תאריכים תרצה לנפוש?</h5>
+            <form #orderForm="ngForm" (ngSubmit)="ok()" class="card-text">
+                <label for="startDate">תאריך התחלה:</label>
+                <input type="date" id="startDate" name="startDate_" [(ngModel)]="startDate" ngDefaultControl required
+                    [min]="d|date:'yyyy-MM-dd'" [max]="endDate|date:'yyyy-MM-dd'">
+                <br>‏
+                <label for="endDate">תאריך סיום:</label>
+                <input type="date" [min]="startDate|date:'yyyy-MM-dd'" id="endDate" name="endDate_" ngDefaultControl
+                    [(ngModel)]="endDate" required>
+                <br>‏
+                <input type="submit" value="הזמן" class="btn btn-outline-dark" [disabled]="!orderForm.form.valid">
+            </form>
+        </div>
+    </div>
+</body>

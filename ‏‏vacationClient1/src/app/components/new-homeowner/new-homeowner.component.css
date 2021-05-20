@@ -1,0 +1,27 @@
+.form-control{
+    width: 17%;
+    align-items:center‏;
+}
+.form-group{
+    display: flex;
+    align-items:center‏;
+}
+body{
+    display: flex;
+    text-align: center; 
+    justify-content: center; 
+    background-color: rgb(224, 236, 247);  
+}
+#submit{
+    width: 100%; 
+}
+input{
+    margin: 2%;
+}
+label{
+    width: max-content;
+    font: message-box;
+}
+.lbError{
+    display: table-row-group
+}

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="vacationDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="consumer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="identityCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="houseNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="postalCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="order" Relationship="Self.FK_order_consumer" FromRole="consumer" ToRole="order" />
+  </EntityType>
+  <EntityType Name="homeowner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="identityCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="houseNumber" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="postalCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="vacationApartment" Relationship="Self.FK_vacationApartment_houseOwner" FromRole="homeowner" ToRole="vacationApartment" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="apartmentId" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="consumerId" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="arrivalTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="departureTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="consumer" Relationship="Self.FK_order_consumer" FromRole="order" ToRole="consumer" />
+    <NavigationProperty Name="vacationApartment" Relationship="Self.FK_order_vacationApartment" FromRole="order" ToRole="vacationApartment" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vacationApartment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="homeownerId" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="houseNumber" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="neighborhood" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="postalCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="floor" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="lan" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="lng" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="amountOfRooms" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="beds" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="aSynagogueNearby" Type="Boolean" />
+    <Property Name="eruvAnTheNeighborhood" Type="Boolean" />
+    <Property Name="yard" Type="Boolean" />
+    <Property Name="pool" Type="Boolean" />
+    <Property Name="jacuzzi" Type="Boolean" />
+    <Property Name="weekendPrice" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="pricePerNight" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="priceForSaturdayNight" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="moreDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="homeowner" Relationship="Self.FK_vacationApartment_houseOwner" FromRole="vacationApartment" ToRole="homeowner" />
+    <NavigationProperty Name="order" Relationship="Self.FK_order_vacationApartment" FromRole="vacationApartment" ToRole="order" />
+  </EntityType>
+  <Association Name="FK_order_consumer">
+    <End Role="consumer" Type="Self.consumer" Multiplicity="1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="consumer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="consumerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vacationApartment_houseOwner">
+    <End Role="homeowner" Type="Self.homeowner" Multiplicity="0..1" />
+    <End Role="vacationApartment" Type="Self.vacationApartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="homeowner">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vacationApartment">
+        <PropertyRef Name="homeownerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_vacationApartment">
+    <End Role="vacationApartment" Type="Self.vacationApartment" Multiplicity="1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vacationApartment">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="apartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="vacationDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="consumer" EntityType="Self.consumer" />
+    <EntitySet Name="homeowner" EntityType="Self.homeowner" />
+    <EntitySet Name="order" EntityType="Self.order" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="vacationApartment" EntityType="Self.vacationApartment" />
+    <AssociationSet Name="FK_order_consumer" Association="Self.FK_order_consumer">
+      <End Role="consumer" EntitySet="consumer" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vacationApartment_houseOwner" Association="Self.FK_vacationApartment_houseOwner">
+      <End Role="homeowner" EntitySet="homeowner" />
+      <End Role="vacationApartment" EntitySet="vacationApartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_vacationApartment" Association="Self.FK_order_vacationApartment">
+      <End Role="vacationApartment" EntitySet="vacationApartment" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

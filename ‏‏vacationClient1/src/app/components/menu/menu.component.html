@@ -1,0 +1,13 @@
+<div class="topMenu" style="display: flex;">
+  <span class="clicker" (click)="viewMenu()">&equiv;</span>
+  <img src="..\assets\images\logo2.png" height="80%" width="40%" style="width: 200px;" style="margin:auto">
+</div>
+<div [ngClass]="{'viewM':viewM, 'hideM':!viewM}" style="float:right;text-align: center;contain: size;
+  line-height: normal;mix-blend-mode: hard-light;">
+  <ul>
+    <li><a (click)="passingToHomePage()">דף הבית</a>
+    <li><a (click)="passingToSearchPage()">חפש את דירת הנופש הבאה שלך</a>
+    <li><a (click)="passingToConsumersEntrancePage()">אזור אישי</a>
+    <li><a (click)="passingToHouseOwnersEntrancePage()">כניסת משכירים</a>
+  </ul>
+</div>
